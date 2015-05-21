@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "A gulp plugin to generate a JavaScript client from ColdFusion Taffy .cfc files",
+  "repository": "IvanStoilov/gulp-taffy-jsclient",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "gulp",
+    "coldfusion",
+    "taffy",
+    "jsclient",
+    "generate"
+  ],
+  "author": "Ivan Stoilov",
+  "license": "MIT"
+}
