@@ -15,5 +15,12 @@
     "generate"
   ],
   "author": "Ivan Stoilov",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7"
+  }
 }
