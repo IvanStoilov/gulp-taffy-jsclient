@@ -6,8 +6,7 @@ var fs = require('fs');
 
 const PLUGIN_NAME = 'gulp-taffy-jsclient';
 
-function gulpTaffy(resourceModule, sourceFile) {
-
+function gulpTaffy(resourceModule, configParam, sourceFile) {
     // creating a stream through which each file will pass
     var stream = through.obj(function(file, enc, cb) {
         function handleBuffer(err, data) {
@@ -19,7 +18,7 @@ function gulpTaffy(resourceModule, sourceFile) {
                 return;
             }
 
-            file.contents = new Buffer(generateClient(file, resourceModule, data));
+            file.contents = new Buffer(generateClient(file, resourceModule, data, configParam));
 
             // make sure the file goes through the next gulp plugin
             this.push(file);
@@ -68,7 +67,7 @@ function strpBrackets(item) {
     return item.replace(/[\{\}]/g, '');
 }
 
-function generateClient(file, resourceModule, sourceFile) {
+function generateClient(file, resourceModule, sourceFile, configParam) {
     var obj = JSON.parse(file.contents);
     var component = obj.cfcomponent;
 
@@ -120,7 +119,7 @@ function generateClient(file, resourceModule, sourceFile) {
 
     var classArgs = endpoint.arguments;
     var body = format(
-        'var url = Config.apiBaseUrl + PxcUtilService.stringFormat("{0}", { {1} });' +
+        'var url = '+configParam+' + PxcUtilService.stringFormat("{0}", { {1} });' +
             'return { {2} } ' +
             '{3}',
         endpoint.url,
