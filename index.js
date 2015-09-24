@@ -120,7 +120,7 @@ function generateClient(file, resourceModule, sourceFile, configParam) {
     var classArgs = endpoint.arguments;
     var body = format(
         'var url = '+configParam+' + PxcUtilService.stringFormat("{0}", { {1} });' +
-            'return { {2} } ' +
+            'return { {2}, url: url } ' +
             '{3}',
         endpoint.url,
         classArgs.map(function(i) {return format('"{0}": {1}', i, i)}).join(', '),
