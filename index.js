@@ -108,7 +108,7 @@ function generateClient(file, resourceModule, sourceFile, configParam) {
         if (verb.name.match(/(post|put|patch)/i)) {
             methodBody = format('return $http.{0}(url, data, options);', verb.name);
         } else {
-            methodBody = format('return $http.{0}(url + PxcUtilService.encodeQueryData(data), options);', verb.name)
+            methodBody = format('return $http.{0}(url + Util.encodeQueryData(data), options);', verb.name)
         }
         var methodName = "do" + capitalize(verb.name);
 
@@ -119,7 +119,7 @@ function generateClient(file, resourceModule, sourceFile, configParam) {
 
     var classArgs = endpoint.arguments;
     var body = format(
-        'var url = '+configParam+' + PxcUtilService.stringFormat("{0}", { {1} });' +
+        'var url = '+configParam+' + Util.stringFormat("{0}", { {1} });' +
             'return { {2}, url: url } ' +
             '{3}',
         endpoint.url,
