@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "gulp-taffy-typescript-client",
   "version": "0.0.1",
-  "description": "A gulp plugin to generate a JavaScript client from ColdFusion Taffy .cfc files",
+  "description": "A gulp plugin to generate a typescript client from ColdFusion Taffy .cfc files",
   "repository": "IvanStoilov/gulp-taffy-jsclient",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,10 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "^3.0.1",
+    "taffy-typescript-client": "0.0.1",
     "through2": "^0.6.3"
   },
   "devDependencies": {
-    "gulp": "^3.8.7"
+    "gulp": "^3.9.1"
   }
 }
