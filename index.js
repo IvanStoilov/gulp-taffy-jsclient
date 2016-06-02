@@ -22,7 +22,7 @@ function gulpTaffyTypescriptClient(baseUrl) {
 }
 
 function handleBuffer(file, baseUrl, enc, cb) {
-    var endpointName = 'test';
+    var endpointName = path.basename(file.path, path.extname(file.path));
 
     taffyTypescriptClient(file.contents.toString(enc), endpointName, baseUrl, (err, data) => {
         if (err) {
