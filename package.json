@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "^3.0.1",
-    "taffy-typescript-client": "^0.0.3",
+    "taffy-typescript-client": "0.0.8",
     "through2": "^0.6.3"
   },
   "devDependencies": {
